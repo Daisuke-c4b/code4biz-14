@@ -4,7 +4,9 @@ coin = 0
 min_coin = 0
 for i in range(1, 51):
     rn = random.random()
-    if rn < 0.5:
+    # if rn < 0.5: #課題2-1 200円 / 500円 = 50% / 50%
+    # if rn < 0.9: #課題2-2 200円 / 500円 = 90% / 10%
+    if rn < 0.1: #課題2-3 200円 / 500円 = 10% / 90%
         pay = "200円"
         coin = coin + 2
     else:
