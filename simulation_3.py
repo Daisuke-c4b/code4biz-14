@@ -47,11 +47,11 @@ for i in range(1, 51):
 
 # 100円玉、500円玉の在庫枚数を不足枚数に補充
 required100 += coin100
-if required100 > min_coin100:
-    required100 = min_coin100
+if required100 < min_coin100:
+    min_coin100 = required100
 required500 += coin500
-if required500 > min_coin500:
-    required500 = min_coin500
+if required500 < min_coin500:
+    min_coin500 = required500
 
 print(
     f"{'-'*30}\n"
@@ -59,7 +59,7 @@ print(
     f"◎ 500円の割合：{rate_500}\n"
     f"● 1000円の割合：{rate_1000:.1f}\n"
     f"上記の場合のシミュレーション\n"
-    f"100円玉の最大不足枚数:{abs(required100)}枚\n"
-    f"500円玉の最大不足枚数:{abs(required500)}枚\n"
+    f"100円玉の最大不足枚数:{abs(min_coin100)}枚\n"
+    f"500円玉の最大不足枚数:{abs(min_coin500)}枚\n"
     f"{'-'*30}\n"
 )
